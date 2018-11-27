@@ -484,7 +484,7 @@ antd@^3.9.1:
     rc-dropdown "~2.2.0"
     rc-editor-mention "^1.0.2"
     rc-form "^2.1.0"
-    rc-input-number "~4.0.0"
+    rc-Input-number "~4.0.0"
     rc-menu "~7.4.1"
     rc-notification "~3.2.0"
     rc-pagination "~1.17.0"
@@ -4430,7 +4430,7 @@ rc-hammerjs@~0.6.0:
 
 rc-input-number@~4.0.0:
   version "4.0.13"
-  resolved "https://registry.yarnpkg.com/rc-input-number/-/rc-input-number-4.0.13.tgz#18ac305bf07b6771ad0e4edc97b1e1bbb9b71918"
+  resolved "https://registry.yarnpkg.com/rc-Input-number/-/rc-Input-number-4.0.13.tgz#18ac305bf07b6771ad0e4edc97b1e1bbb9b71918"
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.0"
@@ -4694,6 +4694,12 @@ react-lazy-load@^3.0.12:
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-number-format@^4.0.4:
+  version "4.0.4"
+  resolved "http://registry.npm.taobao.org/react-number-format/download/react-number-format-4.0.4.tgz#0a9fffdcc0f43031eb8587aa22d616dca0852239"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-router-dom@^4.3.1:
   version "4.3.1"
