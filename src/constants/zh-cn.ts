@@ -5,7 +5,12 @@
  */
 export const lang = {
   confirm: '确认',
+  receivables: '收款',
   receivablesAmount: '收款金额',
+  payType: '支付方式',
+  weChat: '微信',
+  payDetailed: '支付详情',
+  orderDetailed: '订单详情',
   promptMsg: msg => `${msg}不能为空`
 
 };
