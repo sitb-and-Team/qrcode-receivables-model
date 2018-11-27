@@ -9,17 +9,17 @@ import 'es6-promise';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Promise } from 'es6-promise';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import './styles/index.scss';
+import { RouterConfig, routerConfig, routerPath } from './cose/router.config';
 
-import { routerConfig } from './cose/router.config';
 require('es6-promise').polyfill();
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: blue[500] },
+    primary: {main: blue[500]},
     secondary: {
       main: blue[500],
       contrastText: '#fff'
@@ -27,25 +27,30 @@ const theme = createMuiTheme({
   }
 });
 
-
 function run() {
   ReactDOM.render(
     <main>
       <section className="background"/>
       <HashRouter>
-        <Switch>
-          <MuiThemeProvider theme={theme}>
+        <MuiThemeProvider theme={theme}>
+          <Switch>
             {
-              routerConfig.map((values, index) => (
-                <Route exact
-                       key={index}
-                       path={values.path}
-                       component={values.component}
-                />
-              ))
+              routerConfig.map((values: RouterConfig, index) => {
+                document.title = values.title || '';
+                return (
+                  <Route exact
+                         key={index}
+                         path={values.path}
+                         component={values.component}
+                  />
+                )
+              })
             }
-          </MuiThemeProvider>
-        </Switch>
+            <Route exact
+                   render={() => (<Redirect to={routerPath.receivables}/>)}
+            />
+          </Switch>
+        </MuiThemeProvider>
       </HashRouter>
     </main>,
     document.getElementById('application') as HTMLElement
