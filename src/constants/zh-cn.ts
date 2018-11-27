@@ -4,18 +4,17 @@
  * date: 2018/8/10
  */
 export const lang = {
-  checkValue: '验证码',
-  name: '用户名',
-  password: '密码',
-  passwordConfirm: '二次确认',
-  register: '注册',
-  resetPassword: '重置密码',
-  registeredAccount: '注册账户',
-  login: '登录',
-  forgetPassword: '忘记密码',
+  confirm: '确认',
+  receivablesAmount: '收款金额',
   promptMsg: msg => `${msg}不能为空`
 
 };
+
+export const menu = {
+  receivables: '收款',
+  receivablesDetailed: '收款详情'
+};
+
 export const statusCode = {
   '0000': '请求成功',
   '1000': '未授权',
