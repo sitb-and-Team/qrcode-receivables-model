@@ -4,6 +4,8 @@
  * date: 2018/8/7
  */
 import 'whatwg-fetch'
+import 'babel-polyfill';
+import 'es6-promise';
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Promise } from 'es6-promise';
@@ -13,6 +15,7 @@ import blue from '@material-ui/core/colors/blue';
 import './styles/index.scss';
 
 import { routerConfig } from './cose/router.config';
+require('es6-promise').polyfill();
 
 const theme = createMuiTheme({
   palette: {
