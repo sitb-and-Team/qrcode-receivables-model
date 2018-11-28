@@ -22,6 +22,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import NavigateNext from '@material-ui/icons/NavigateNext';
 import IconButton from '@material-ui/core/IconButton';
 import Clear from '@material-ui/icons/Clear';
+import { queryToObjectWithUrl } from '@sitb/wbs/utils/HttpUtil';
 
 const styles: any = theme => ({
   header: {
@@ -75,8 +76,20 @@ class Container extends React.Component<any, any> {
 
   constructor(props, content) {
     super(props, content);
+    let amount = '';
+    let isAmount = false;
+    // 获取url中的参数，是否有金额字段
+    const href = location.href;
+    if (href.indexOf('?') !== -1) {
+      const {transactionAmount} = queryToObjectWithUrl(href);
+      if (transactionAmount) {
+        amount = transactionAmount;
+        isAmount = true;
+      }
+    }
     this.state = {
-      amount: '',
+      amount,
+      isAmount,
       isPayState: false
     };
   }
@@ -109,7 +122,6 @@ class Container extends React.Component<any, any> {
    * 开始交易
    */
   handlePay() {
-    console.log(this.props);
     const {history} = this.props;
     history.push('/success');
   }
@@ -141,7 +153,7 @@ class Container extends React.Component<any, any> {
 
   renderContent() {
     const {classes} = this.props;
-    const {amount} = this.state;
+    const {amount, isAmount} = this.state;
     return (
       <Grid className={classes.content}
             container
@@ -149,7 +161,8 @@ class Container extends React.Component<any, any> {
         <FormControl fullWidth>
           <TextField className={classes.formControl}
                      label={lang.receivablesAmount}
-                     value={this.state.amount}
+                     value={amount}
+                     disabled={isAmount}
                      onChange={e => this.handleChange(e, 'amount')}
                      id="adornment-amount"
                      InputProps={{
