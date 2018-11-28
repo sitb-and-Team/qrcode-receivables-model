@@ -4,14 +4,16 @@
  * date: 2018/11/27
  */
 import * as React from 'react';
+import { OrderDetails } from '../components/OrderDetails';
 
+/**
+ * 成功
+ */
 export class SuccessPage extends React.Component<any, any> {
 
   render() {
     return (
-      <div>
-        {'SuccessPage'}
-      </div>
+      <OrderDetails/>
     )
   }
 }

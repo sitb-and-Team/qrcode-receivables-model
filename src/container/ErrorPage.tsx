@@ -4,14 +4,16 @@
  * date: 2018/11/27
  */
 import * as React from 'react';
+import { OrderDetails } from '../components/OrderDetails';
 
+/**
+ * 失败
+ */
 export class ErrorPage extends React.Component<any, any> {
 
   render() {
     return (
-      <div>
-        {'ErrorPage'}
-      </div>
+      <OrderDetails isFailure/>
     )
   }
 }
