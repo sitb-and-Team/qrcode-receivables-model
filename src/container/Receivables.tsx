@@ -105,6 +105,15 @@ class Container extends React.Component<any, any> {
     this.setState({isPayState: status})
   }
 
+  /**
+   * 开始交易
+   */
+  handlePay() {
+    console.log(this.props);
+    const {history} = this.props;
+    history.push('/success');
+  }
+
   renderHandle() {
     const {classes} = this.props;
     return (
@@ -209,6 +218,11 @@ class Container extends React.Component<any, any> {
                 </Typography>
                 <NavigateNext/>
               </ListItem>
+              <Button children={lang.pay}
+                      className={classes.contentSubmit}
+                      disabled={amount === ''}
+                      onClick={this.handlePay}
+              />
             </List>
           </Grid>
         </Drawer>
