@@ -5,6 +5,7 @@
  */
 export const lang = {
   confirm: '确认',
+  pay: '支付',
   receivables: '收款',
   receivablesAmount: '收款金额',
   payType: '支付方式',
