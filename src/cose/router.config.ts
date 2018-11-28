@@ -17,8 +17,8 @@ export interface RouterConfig {
 // 路由path
 export const routerPath = {
   receivables: '/receivables',
-  successPage: '/successPage',
-  errorPage: '/errorPage'
+  success: '/success',
+  error: '/error'
 };
 
 // 路由基本配置
@@ -28,10 +28,10 @@ export const routerConfig: Array<RouterConfig> = [{
   component: Receivables
 }, {
   title: menu.receivablesDetailed,
-  path: routerPath.successPage,
+  path: routerPath.success,
   component: SuccessPage
 }, {
   title: menu.receivablesDetailed,
-  path: routerPath.errorPage,
+  path: routerPath.error,
   component: ErrorPage
 }];
