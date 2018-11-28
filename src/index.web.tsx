@@ -47,6 +47,7 @@ function run() {
               })
             }
             <Route exact
+                   path={'/'}
                    render={() => (<Redirect to={routerPath.receivables}/>)}
             />
           </Switch>
